@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" font-family="Noto Sans CJK JP, sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="ar2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#0d9488"/>
+    </marker>
+  </defs>
+
+  <text x="300" y="24" text-anchor="middle" font-size="17" font-weight="bold" fill="#1e3a8a">YOLOv3 の全体構造（Darknet-53 → 3スケール検出）</text>
+
+  <!-- Row 1: input -> backbone -> F13 -> Out13 -->
+  <rect x="14" y="58" width="70" height="56" rx="6" fill="#f1f5f9" stroke="#94a3b8"/>
+  <text x="49" y="82" text-anchor="middle" font-size="12" fill="#334155">入力</text>
+  <text x="49" y="99" text-anchor="middle" font-size="11" fill="#334155">416×416</text>
+
+  <line x1="84" y1="86" x2="106" y2="86" stroke="#2563eb" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="108" y="52" width="124" height="68" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="170" y="80" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#1e3a8a">Darknet-53</text>
+  <text x="170" y="97" text-anchor="middle" font-size="11" fill="#1e3a8a">バックボーン</text>
+  <text x="170" y="112" text-anchor="middle" font-size="9.5" fill="#3b6fb6">畳み込み+残差・ストライド2で縮小</text>
+
+  <line x1="232" y1="86" x2="256" y2="86" stroke="#2563eb" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="258" y="58" width="74" height="56" rx="6" fill="#e0e7ff" stroke="#6366f1"/>
+  <text x="295" y="82" text-anchor="middle" font-size="12" fill="#3730a3">13×13 特徴</text>
+  <text x="295" y="99" text-anchor="middle" font-size="10" fill="#6366f1">(/32 最も粗い)</text>
+
+  <line x1="332" y1="86" x2="396" y2="86" stroke="#2563eb" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="364" y="78" text-anchor="middle" font-size="9.5" fill="#64748b">検出ヘッド</text>
+
+  <rect x="398" y="56" width="146" height="60" rx="6" fill="#ffedd5" stroke="#ea580c"/>
+  <text x="471" y="80" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#9a3412">13×13×255</text>
+  <text x="471" y="100" text-anchor="middle" font-size="11" fill="#9a3412">大きい物体</text>
+
+  <!-- Row 2: F26 -> Out26 -->
+  <rect x="258" y="178" width="74" height="56" rx="6" fill="#e0e7ff" stroke="#6366f1"/>
+  <text x="295" y="202" text-anchor="middle" font-size="12" fill="#3730a3">26×26 特徴</text>
+  <text x="295" y="219" text-anchor="middle" font-size="10" fill="#6366f1">(/16)</text>
+
+  <line x1="332" y1="206" x2="396" y2="206" stroke="#2563eb" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="398" y="176" width="146" height="60" rx="6" fill="#ffedd5" stroke="#ea580c"/>
+  <text x="471" y="200" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#9a3412">26×26×255</text>
+  <text x="471" y="220" text-anchor="middle" font-size="11" fill="#9a3412">中くらいの物体</text>
+
+  <!-- Row 3: F52 -> Out52 -->
+  <rect x="258" y="288" width="74" height="56" rx="6" fill="#e0e7ff" stroke="#6366f1"/>
+  <text x="295" y="312" text-anchor="middle" font-size="12" fill="#3730a3">52×52 特徴</text>
+  <text x="295" y="329" text-anchor="middle" font-size="10" fill="#6366f1">(/8 最も細かい)</text>
+
+  <line x1="332" y1="316" x2="396" y2="316" stroke="#2563eb" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="398" y="286" width="146" height="60" rx="6" fill="#ffedd5" stroke="#ea580c"/>
+  <text x="471" y="310" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#9a3412">52×52×255</text>
+  <text x="471" y="330" text-anchor="middle" font-size="11" fill="#9a3412">小さい物体</text>
+
+  <!-- backbone also feeds 26 and 52 (skip features), dashed -->
+  <path d="M150,120 C150,160 220,170 256,196" fill="none" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <path d="M140,120 C120,230 210,280 256,306" fill="none" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="4 3"/>
+
+  <!-- upsample + concat arrows (deep -> shallow) -->
+  <line x1="295" y1="114" x2="295" y2="176" stroke="#0d9488" stroke-width="2" marker-end="url(#ar2)"/>
+  <line x1="295" y1="234" x2="295" y2="286" stroke="#0d9488" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="340" y="150" text-anchor="start" font-size="10" fill="#0f766e">アップサンプリング</text>
+  <text x="340" y="164" text-anchor="start" font-size="10" fill="#0f766e">＋ 浅い層と連結</text>
+  <text x="340" y="262" text-anchor="start" font-size="10" fill="#0f766e">アップサンプリング</text>
+  <text x="340" y="276" text-anchor="start" font-size="10" fill="#0f766e">＋ 浅い層と連結</text>
+
+  <!-- caption -->
+  <rect x="14" y="362" width="572" height="30" rx="6" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="300" y="381" text-anchor="middle" font-size="11" fill="#1e3a8a">255 = 3 ×(5 + 80)：3アンカー ×（x, y, w, h, 物体らしさ ＋ 80クラス）。入力416では /32→13, /16→26, /8→52。</text>
+</svg>

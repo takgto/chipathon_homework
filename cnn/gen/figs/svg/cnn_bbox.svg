@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380" font-family="Noto Sans CJK JP, sans-serif">
+<defs><marker id="ab" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/></marker></defs>
+<text x="380" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e3a8a">ネットワークが出す (x, y, w, h) は相対値：枠に戻すには変換が要る</text>
+<text x="134" y="56" text-anchor="middle" font-size="12" fill="#334155">特徴マップのグリッド（13×13 の一部）</text>
+<rect x="82" y="124" width="52" height="52" fill="#dbeafe"/>
+<line x1="30" y1="72" x2="30" y2="280" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="30" y1="72" x2="238" y2="72" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="82" y1="72" x2="82" y2="280" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="30" y1="124" x2="238" y2="124" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="134" y1="72" x2="134" y2="280" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="30" y1="176" x2="238" y2="176" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="186" y1="72" x2="186" y2="280" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="30" y1="228" x2="238" y2="228" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="238" y1="72" x2="238" y2="280" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="30" y1="280" x2="238" y2="280" stroke="#94a3b8" stroke-width="1.5"/>
+<circle cx="82" cy="124" r="3.5" fill="#1e3a8a"/>
+<text x="86" y="117" text-anchor="start" font-size="11" fill="#1e3a8a">担当セルの左上 (g<tspan baseline-shift="sub" font-size="8.5">i</tspan>, g<tspan baseline-shift="sub" font-size="8.5">j</tspan>)</text>
+<line x1="82" y1="155.2" x2="115.80000000000001" y2="155.2" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+<line x1="115.80000000000001" y1="124" x2="115.80000000000001" y2="155.2" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+<circle cx="115.80000000000001" cy="155.2" r="4" fill="#2563eb"/>
+<text x="97.6" y="168.2" text-anchor="middle" font-size="10.5" fill="#1d4ed8">σ(t<tspan baseline-shift="sub" font-size="8.5">x</tspan>)</text>
+<text x="130.8" y="143.64" text-anchor="middle" font-size="10.5" fill="#1d4ed8">σ(t<tspan baseline-shift="sub" font-size="8.5">y</tspan>)</text>
+<rect x="71.60000000000002" y="121.39999999999998" width="88.39999999999999" height="67.60000000000001" fill="none" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="58.34000000000002" y="129.85" width="114.91999999999999" height="50.7" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<circle cx="36" cy="294" r="4" fill="#2563eb"/><text x="46" y="298" font-size="11" fill="#1d4ed8">枠の中心 (b<tspan baseline-shift="sub" font-size="8.5">x</tspan>, b<tspan baseline-shift="sub" font-size="8.5">y</tspan>)</text>
+<line x1="180" y1="294" x2="206" y2="294" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4"/><text x="212" y="298" font-size="11" fill="#92400e">アンカー (a<tspan baseline-shift="sub" font-size="8.5">w</tspan>, a<tspan baseline-shift="sub" font-size="8.5">h</tspan>)：基準の枠</text>
+<line x1="180" y1="312" x2="206" y2="312" stroke="#dc2626" stroke-width="2.5"/><text x="212" y="316" font-size="11" fill="#b91c1c">予測枠 (b<tspan baseline-shift="sub" font-size="8.5">w</tspan>, b<tspan baseline-shift="sub" font-size="8.5">h</tspan>)</text>
+<rect x="386" y="48" width="360" height="288" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="400" y="72" font-size="13" font-weight="bold" fill="#334155">ネットワークの生の出力 t<tspan baseline-shift="sub" font-size="8.5">x</tspan>, t<tspan baseline-shift="sub" font-size="8.5">y</tspan>, t<tspan baseline-shift="sub" font-size="8.5">w</tspan>, t<tspan baseline-shift="sub" font-size="8.5">h</tspan> を枠に戻す式</text>
+<text x="400" y="100" font-size="12" font-weight="bold" fill="#1d4ed8">位置</text>
+<text x="448" y="100" font-size="12.5" fill="#1d4ed8">b<tspan baseline-shift="sub" font-size="8.5">x</tspan> = g<tspan baseline-shift="sub" font-size="8.5">i</tspan> + σ(t<tspan baseline-shift="sub" font-size="8.5">x</tspan>)　　b<tspan baseline-shift="sub" font-size="8.5">y</tspan> = g<tspan baseline-shift="sub" font-size="8.5">j</tspan> + σ(t<tspan baseline-shift="sub" font-size="8.5">y</tspan>)</text>
+<text x="448" y="120" font-size="11.5" fill="#1d4ed8">担当セルの左上からの「ずれ」（0〜1、セル1個 = 1）</text>
+<text x="400" y="152" font-size="12" font-weight="bold" fill="#b91c1c">大きさ</text>
+<text x="448" y="152" font-size="12.5" fill="#b91c1c">b<tspan baseline-shift="sub" font-size="8.5">w</tspan> = a<tspan baseline-shift="sub" font-size="8.5">w</tspan> · e<tspan baseline-shift="super" font-size="9">t<tspan baseline-shift="sub" font-size="8.5">w</tspan></tspan>　　b<tspan baseline-shift="sub" font-size="8.5">h</tspan> = a<tspan baseline-shift="sub" font-size="8.5">h</tspan> · e<tspan baseline-shift="super" font-size="9">t<tspan baseline-shift="sub" font-size="8.5">h</tspan></tspan></text>
+<text x="448" y="172" font-size="11.5" fill="#b91c1c">アンカー枠（ピクセル単位）に対する「倍率」</text>
+<text x="400" y="204" font-size="12" font-weight="bold" fill="#334155">画像座標</text>
+<text x="464" y="204" font-size="12" fill="#334155">b<tspan baseline-shift="sub" font-size="8.5">x</tspan>, b<tspan baseline-shift="sub" font-size="8.5">y</tspan> × 1セルの大きさ（416 ÷ 13 = 32 画素）</text>
+<text x="464" y="222" font-size="11.5" fill="#334155">b<tspan baseline-shift="sub" font-size="8.5">w</tspan>, b<tspan baseline-shift="sub" font-size="8.5">h</tspan> はそのまま（アンカーが画素単位のため）</text>
+<text x="400" y="248" font-size="11" fill="#64748b">σ はシグモイド関数（値を 0〜1 に押し込める）</text>
+<rect x="16" y="326" width="728" height="46" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+<text x="380" y="345" text-anchor="middle" font-size="12" fill="#1e3a8a">出力テンソルの x, y は担当セルから見た相対位置、w, h はアンカー枠から見た相対的な大きさ。</text>
+<text x="380" y="363" text-anchor="middle" font-size="12" fill="#1e3a8a">画像上のピクセル座標そのものではなく、後処理でこの変換をしてから NMS にかける（本番の C++ コードが行う）。</text>
+</svg>

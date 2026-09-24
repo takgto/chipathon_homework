@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="760" height="360" font-family="Noto Sans CJK JP, sans-serif">
+<defs><marker id="ab" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/></marker><marker id="ap" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#7c3aed"/></marker></defs>
+<text x="380" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e3a8a">LeNet の全体構造（入力 1×28×28 → 出力 10）</text>
+<rect x="16" y="46" width="728" height="150" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="30" y="66" font-size="13" font-weight="bold" fill="#334155">特徴抽出（畳み込み ＋ プーリング）</text>
+<rect x="30" y="104" width="84" height="64" rx="7" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="72.0" y="132.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">入力</text>
+<text x="72.0" y="148.0" text-anchor="middle" font-size="12" fill="#334155">1×28×28</text>
+<line x1="118" y1="136" x2="168" y2="136" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+<text x="143" y="94" text-anchor="middle" font-size="10.5" fill="#1d4ed8">conv1</text>
+<text x="143" y="107" text-anchor="middle" font-size="10.5" fill="#1d4ed8">K=5, P=2</text>
+<text x="143" y="120" text-anchor="middle" font-size="10.5" fill="#1d4ed8">Cout=6</text>
+<rect x="172" y="104" width="90" height="64" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="217.0" y="132.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a8a">6×28×28</text>
+<text x="217.0" y="148.0" text-anchor="middle" font-size="12" fill="#1e3a8a">+ReLU</text>
+<line x1="266" y1="136" x2="316" y2="136" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+<text x="291" y="100" text-anchor="middle" font-size="10.5" fill="#1d4ed8">max pool</text>
+<text x="291" y="113" text-anchor="middle" font-size="10.5" fill="#1d4ed8">2×2, S=2</text>
+<rect x="320" y="112" width="80" height="48" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="360.0" y="140.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a8a">6×14×14</text>
+<line x1="404" y1="136" x2="454" y2="136" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+<text x="429" y="94" text-anchor="middle" font-size="10.5" fill="#1d4ed8">conv2</text>
+<text x="429" y="107" text-anchor="middle" font-size="10.5" fill="#1d4ed8">K=5, P=0</text>
+<text x="429" y="120" text-anchor="middle" font-size="10.5" fill="#1d4ed8">Cout=16</text>
+<rect x="458" y="112" width="80" height="48" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="498.0" y="132.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a8a">16×10×10</text>
+<text x="498.0" y="148.0" text-anchor="middle" font-size="12" fill="#1e3a8a">+ReLU</text>
+<line x1="542" y1="136" x2="592" y2="136" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+<text x="567" y="100" text-anchor="middle" font-size="10.5" fill="#1d4ed8">max pool</text>
+<text x="567" y="113" text-anchor="middle" font-size="10.5" fill="#1d4ed8">2×2, S=2</text>
+<rect x="596" y="118" width="72" height="36" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="632.0" y="140.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a8a">16×5×5</text>
+<rect x="16" y="210" width="728" height="100" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="60" y="230" font-size="13" font-weight="bold" fill="#334155">分類（平坦化 ＋ 全結合）</text>
+<rect x="30" y="252" width="110" height="44" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="85.0" y="270.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#4c1d95">平坦化 flatten</text>
+<text x="85.0" y="286.0" text-anchor="middle" font-size="12" fill="#4c1d95">16×5×5 = 400</text>
+<line x1="144" y1="274" x2="204" y2="274" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+<text x="174" y="248" text-anchor="middle" font-size="10.5" fill="#1d4ed8">fc1</text>
+<text x="174" y="261" text-anchor="middle" font-size="10.5" fill="#1d4ed8">400→120</text>
+<rect x="208" y="252" width="84" height="44" rx="7" fill="#ffedd5" stroke="#c2410c" stroke-width="2"/>
+<text x="250.0" y="270.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#7c2d12">120</text>
+<text x="250.0" y="286.0" text-anchor="middle" font-size="12" fill="#7c2d12">+ReLU</text>
+<line x1="296" y1="274" x2="356" y2="274" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+<text x="326" y="248" text-anchor="middle" font-size="10.5" fill="#1d4ed8">fc2</text>
+<text x="326" y="261" text-anchor="middle" font-size="10.5" fill="#1d4ed8">120→84</text>
+<rect x="360" y="252" width="84" height="44" rx="7" fill="#ffedd5" stroke="#c2410c" stroke-width="2"/>
+<text x="402.0" y="270.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#7c2d12">84</text>
+<text x="402.0" y="286.0" text-anchor="middle" font-size="12" fill="#7c2d12">+ReLU</text>
+<line x1="448" y1="274" x2="508" y2="274" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+<text x="478" y="248" text-anchor="middle" font-size="10.5" fill="#1d4ed8">fc3</text>
+<text x="478" y="261" text-anchor="middle" font-size="10.5" fill="#1d4ed8">84→10</text>
+<rect x="512" y="252" width="84" height="44" rx="7" fill="#ffedd5" stroke="#c2410c" stroke-width="2"/>
+<text x="554.0" y="270.0" text-anchor="middle" font-size="11" font-weight="bold" fill="#7c2d12">出力 10</text>
+<text x="554.0" y="286.0" text-anchor="middle" font-size="11" fill="#7c2d12">各数字のスコア</text>
+<line x1="600" y1="274" x2="650" y2="274" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+<text x="625" y="248" text-anchor="middle" font-size="10.5" fill="#1d4ed8">argmax</text>
+<rect x="654" y="252" width="82" height="44" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="695.0" y="270.0" text-anchor="middle" font-size="11" font-weight="bold" fill="#14532d">予測</text>
+<text x="695.0" y="286.0" text-anchor="middle" font-size="11" fill="#14532d">0〜9 のどれか</text>
+<path d="M 632 156 L 632 195 Q 632 203 624 203 L 50 203 Q 42 203 42 211 L 42 248" fill="none" stroke="#7c3aed" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ap)"/>
+<text x="340" y="190" text-anchor="middle" font-size="10.5" fill="#6d28d9">16×5×5 の特徴マップを1列（400個）に並べ直す</text>
+<rect x="16" y="322" width="728" height="30" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+<text x="380" y="342" text-anchor="middle" font-size="11.5" fill="#1e3a8a">前半（青）で特徴を抽出し、後半（橙）で10クラスに分類する。各段の形は 公式 O = ⌊(W − K + 2P)/S⌋ + 1 で決まる。</text>
+</svg>

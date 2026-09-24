@@ -1,0 +1,68 @@
+# cpp-homework ―― Claude Code への指示
+
+半導体デザインハッカソン（KV260 + YOLOv3）の前に学生が取り組む **C/C++ 事前学習用問題集**（第1〜8章・問1〜25）です。
+Google Colab 上で C++ をコンパイル・実行します。続きの並行処理演習は別リポジトリ **takgto/cpp-lab** にあります。
+
+## 最重要ルール：`.ipynb` は生成物。直接編集しない
+
+- `cpp_homework.ipynb` は **`gen/build_hw.py` から生成** している
+- 本文を直すときは `gen/build_hw.py` の Markdown を、コードを直すときは `src/*.cpp` を直し、**再生成** する
+- `.ipynb` を直接編集してはいけない（次の再生成で消える）
+- Colab で実行結果（outputs）が入った `.ipynb` を commit しない
+
+```bash
+python3 gen/build_hw.py      # リポジトリのどこからでも可。出力先はリポジトリ直下
+```
+
+## 変更したときの確認手順
+
+1. `python3 gen/build_hw.py` で再生成し、`git diff --stat` で `cpp_homework.ipynb` だけが変わっていることを確認する
+2. C++ を変えたときは `g++ -std=c++17 src/x.cpp -o x && ./x` で動くことを確認する（第4章の `q04c.cpp` / `q04d.cpp` だけ `-pthread` が要る）
+3. 可能なら、全コードセルを上から順に実行して通ることを確認する（`%%writefile` を実ファイルに書き出し、`!` 行をシェルで実行する簡単なスクリプトで代用できる）
+
+## ディレクトリ構成
+
+```
+cpp-homework/
+├── README.md              学生向け。Colab バッジ、進め方、第1〜8章の一覧
+├── CLAUDE.md              このファイル
+├── .gitignore
+├── cpp_homework.ipynb     問題集本体（生成物）
+├── src/                   ノートブックが %%writefile で書き出す C++ ソース
+│   ├── qNN_try.cpp        設問で学生が書き込む骨組み（TODO コメント入り）
+│   └── qNN.cpp, qNNa.cpp… 解答
+└── gen/
+    ├── README.md
+    └── build_hw.py        生成スクリプト（本文はこの中の Markdown）
+```
+
+## 教材の約束ごと（変更するときに守る）
+
+- 各章は **解説 → 設問 → 設問の解答** の順。見出しは `# 第N章　…`（全角スペース）/ `## 解説` / `## 設問` / `## 設問の解答`。cnn-homework と揃えてある
+- 見出しの階層は 3 つの問題集（linux / cpp / cnn）で共通：`# 第N章　…` → `## 解説` → `---` → `## 設問` → `### 問N`（各設問）→ `## 設問の解答` → `### 問N`（各解答）
+- 問の番号は **章をまたいで通し**（第1章 問1〜3、第2章 問4〜7 … 第8章 問23〜25）。設問と解答で同じ番号を使う。設問を増減したら後ろの番号をすべてずらす（README の章一覧の「問」列も）
+- 目次（2番目のセル）は `build_hw.py` が `# 第` で始まるセルから自動生成する。見出しの書式を変えない
+- 対象は「C/C++ を少し触ったことがある学生」。専門用語（スレッド、ヘッダ、`->` など）は初出で一言説明する
+- サンプルコード（`yolov3_video_series_prof.cpp` / `yolov3_video_study.cpp`）は cpp-lab の `kv260/` にあり、冒頭からリンクしている。Colab ではコンパイルできないので、引用は抜粋にとどめる
+- 旧問9（`std::thread`）と旧問10（並列化方針）は cpp-lab と重複するため削除済み。**スレッドの話を本編に戻さない**。`std::ref` の説明だけ第4章の補足に置いてある（cpp-lab 演習1がここを参照している）
+- 第2章で「`vector(n)` は 0 初期化が保証される。`new[]` / ローカル配列 / `malloc` は未初期化」を扱う。第8章の `new` の説明はそれを前提にしている
+- 第4章の参照とポインタの比較表は `int x` / `int& r` / `int* p` の前提で書く（`vector` を混ぜない）。「使い分けの原則：自分で選べるなら参照、ライブラリが要求するならポインタ」
+- 時間計測（第5章）はサンプルに合わせて `system_clock` を使っているが、解答で `steady_clock` を推奨している。この関係を崩さない
+- Colab の実行時間はばらつくことを第5章の設問で先に断っている
+
+## Git の扱い
+
+- commit は自由に行ってよい。commit メッセージは日本語でよい
+- **push は行う前に一度確認を取る**（学生が見る public リポジトリのため）
+- `__pycache__/` は `.gitignore` 済み
+
+## 初回セットアップ（完了したらこの節は削除してよい）
+
+- 環境：Windows 上の WSL2。zip は Windows 側の Downloads にあり、WSL2 からは **`/mnt/c/Users/kurod/Downloads/cpp_homework_gen.zip`**（見つからなければ聞くこと）
+- GitHub に空の public リポジトリ（例：`takgto/cpp-homework`）を作って clone した直後の状態を想定
+
+1. clone したリポジトリ直下で `unzip -o /mnt/c/Users/kurod/Downloads/cpp_homework_gen.zip` を実行する
+2. リポジトリ名が `cpp-homework` でない場合、`README.md` の Colab バッジ URL 中の `cpp-homework` を実際の名前に直す
+3. `python3 gen/build_hw.py` を実行し、`git status` で `cpp_homework.ipynb` に差分が出ないことを確認する
+4. `git add .` → commit
+5. push は確認を取ってから。push 後、README のバッジから Colab が開くこと、冒頭の kv260 リンクが開くことを確認する

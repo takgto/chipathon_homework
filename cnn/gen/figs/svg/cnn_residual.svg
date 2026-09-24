@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 270" width="600" height="270" font-family="Noto Sans CJK JP, sans-serif">
+  <defs>
+    <marker id="rb" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="rg" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#0d9488"/>
+    </marker>
+  </defs>
+
+  <text x="300" y="26" text-anchor="middle" font-size="17" font-weight="bold" fill="#1e3a8a">残差ブロック（Residual Block）</text>
+
+  <!-- input x -->
+  <rect x="20" y="118" width="78" height="54" rx="6" fill="#f1f5f9" stroke="#94a3b8"/>
+  <text x="59" y="150" text-anchor="middle" font-size="15" fill="#334155">入力 x</text>
+
+  <!-- arrow to conv block -->
+  <line x1="98" y1="145" x2="124" y2="145" stroke="#2563eb" stroke-width="2" marker-end="url(#rb)"/>
+
+  <!-- conv block F(x) -->
+  <rect x="126" y="112" width="190" height="66" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="221" y="136" text-anchor="middle" font-size="13" fill="#1e3a8a">畳み込み3×3 → ReLU</text>
+  <text x="221" y="156" text-anchor="middle" font-size="13" fill="#1e3a8a">→ 畳み込み3×3</text>
+  <text x="221" y="172" text-anchor="middle" font-size="10.5" fill="#3b6fb6">（これが F(x)）</text>
+
+  <!-- arrow to adder -->
+  <line x1="316" y1="145" x2="356" y2="145" stroke="#2563eb" stroke-width="2" marker-end="url(#rb)"/>
+
+  <!-- adder -->
+  <circle cx="386" cy="145" r="20" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="386" y="151" text-anchor="middle" font-size="20" fill="#a16207">＋</text>
+
+  <!-- arrow to output -->
+  <line x1="406" y1="145" x2="436" y2="145" stroke="#2563eb" stroke-width="2" marker-end="url(#rb)"/>
+
+  <!-- output -->
+  <rect x="438" y="118" width="142" height="54" rx="6" fill="#ffedd5" stroke="#ea580c"/>
+  <text x="509" y="143" text-anchor="middle" font-size="13" font-weight="bold" fill="#9a3412">出力</text>
+  <text x="509" y="161" text-anchor="middle" font-size="13" fill="#9a3412">F(x) + x</text>
+
+  <!-- shortcut (identity) -->
+  <path d="M59,118 C59,66 386,60 386,121" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#rg)"/>
+  <text x="225" y="58" text-anchor="middle" font-size="12" fill="#0f766e">ショートカット：入力 x をそのまま足す（恒等写像）</text>
+
+  <!-- note -->
+  <rect x="20" y="210" width="560" height="46" rx="6" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="300" y="229" text-anchor="middle" font-size="11.5" fill="#1e3a8a">学ぶのは差分 F(x) = H(x) − x。x を足すので勾配が深い層まで流れやすく、</text>
+  <text x="300" y="246" text-anchor="middle" font-size="11.5" fill="#1e3a8a">非常に深いネットワーク（ResNet, Darknet-53 など）でも安定して学習できる。</text>
+</svg>

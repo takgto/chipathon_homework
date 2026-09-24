@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="760" height="360" font-family="Noto Sans CJK JP, sans-serif">
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/></marker></defs>
+  <text x="380" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e3a8a">通常のニューラルネットワーク（全結合）と CNN（畳み込み）の違い</text>
+  <rect x="16" y="42" width="356" height="256" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+  <rect x="388" y="42" width="356" height="256" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="194" y="66" text-anchor="middle" font-size="14" font-weight="bold" fill="#334155">通常のニューラルネットワーク（全結合層）</text>
+  <text x="566" y="66" text-anchor="middle" font-size="14" font-weight="bold" fill="#334155">CNN（畳み込み層）</text>
+  <text x="116" y="86" text-anchor="middle" font-size="12" fill="#334155">入力 4×4（16画素）</text>
+  <line x1="74" y1="106" x2="286" y2="110" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="102" y1="106" x2="286" y2="110" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="130" y1="106" x2="286" y2="110" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="158" y1="106" x2="286" y2="110" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="74" y1="134" x2="286" y2="110" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="102" y1="134" x2="286" y2="110" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="130" y1="134" x2="286" y2="110" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="158" y1="134" x2="286" y2="110" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="74" y1="162" x2="286" y2="110" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="102" y1="162" x2="286" y2="110" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="130" y1="162" x2="286" y2="110" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="158" y1="162" x2="286" y2="110" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="74" y1="190" x2="286" y2="110" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="102" y1="190" x2="286" y2="110" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="130" y1="190" x2="286" y2="110" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="158" y1="190" x2="286" y2="110" stroke="#2563eb" stroke-width="1.2"/>
+  <line x1="74" y1="106" x2="286" y2="148" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="102" y1="106" x2="286" y2="148" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="130" y1="106" x2="286" y2="148" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="158" y1="106" x2="286" y2="148" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="74" y1="134" x2="286" y2="148" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="102" y1="134" x2="286" y2="148" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="130" y1="134" x2="286" y2="148" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="158" y1="134" x2="286" y2="148" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="74" y1="162" x2="286" y2="148" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="102" y1="162" x2="286" y2="148" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="130" y1="162" x2="286" y2="148" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="158" y1="162" x2="286" y2="148" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="74" y1="190" x2="286" y2="148" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="102" y1="190" x2="286" y2="148" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="130" y1="190" x2="286" y2="148" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="158" y1="190" x2="286" y2="148" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="74" y1="106" x2="286" y2="186" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="102" y1="106" x2="286" y2="186" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="130" y1="106" x2="286" y2="186" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="158" y1="106" x2="286" y2="186" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="74" y1="134" x2="286" y2="186" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="102" y1="134" x2="286" y2="186" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="130" y1="134" x2="286" y2="186" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="158" y1="134" x2="286" y2="186" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="74" y1="162" x2="286" y2="186" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="102" y1="162" x2="286" y2="186" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="130" y1="162" x2="286" y2="186" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="158" y1="162" x2="286" y2="186" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="74" y1="190" x2="286" y2="186" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="102" y1="190" x2="286" y2="186" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="130" y1="190" x2="286" y2="186" stroke="#cbd5e1" stroke-width="0.8"/>
+  <line x1="158" y1="190" x2="286" y2="186" stroke="#cbd5e1" stroke-width="0.8"/>
+  <g stroke="#94a3b8" stroke-width="1.5" fill="none">
+    <rect x="60" y="92" width="28" height="28"/>
+    <rect x="88" y="92" width="28" height="28"/>
+    <rect x="116" y="92" width="28" height="28"/>
+    <rect x="144" y="92" width="28" height="28"/>
+    <rect x="60" y="120" width="28" height="28"/>
+    <rect x="88" y="120" width="28" height="28"/>
+    <rect x="116" y="120" width="28" height="28"/>
+    <rect x="144" y="120" width="28" height="28"/>
+    <rect x="60" y="148" width="28" height="28"/>
+    <rect x="88" y="148" width="28" height="28"/>
+    <rect x="116" y="148" width="28" height="28"/>
+    <rect x="144" y="148" width="28" height="28"/>
+    <rect x="60" y="176" width="28" height="28"/>
+    <rect x="88" y="176" width="28" height="28"/>
+    <rect x="116" y="176" width="28" height="28"/>
+    <rect x="144" y="176" width="28" height="28"/>
+  </g>
+  <circle cx="300" cy="110" r="14" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="300" cy="148" r="14" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+  <circle cx="300" cy="186" r="14" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+  <text x="300" y="86" text-anchor="middle" font-size="12" fill="#334155">出力 3個</text>
+  <text x="194" y="242" text-anchor="middle" font-size="12" fill="#1d4ed8">出力1つが <tspan font-weight="bold">全画素</tspan> を見る（画素ごとに別の重み）</text>
+  <text x="194" y="260" text-anchor="middle" font-size="12" fill="#1d4ed8">重みの数 = 画素数 × 出力数 = 16 × 3 = 48</text>
+  <text x="194" y="282" text-anchor="middle" font-size="11.5" fill="#64748b">画像が大きくなると重みが爆発的に増える（位置がずれると別の重み）</text>
+  <text x="476" y="86" text-anchor="middle" font-size="12" fill="#334155">入力 4×4</text>
+  <rect x="420" y="92" width="84" height="84" fill="#bfdbfe"/>
+  <g stroke="#94a3b8" stroke-width="1.5" fill="none">
+    <rect x="420" y="92" width="28" height="28"/>
+    <rect x="448" y="92" width="28" height="28"/>
+    <rect x="476" y="92" width="28" height="28"/>
+    <rect x="504" y="92" width="28" height="28"/>
+    <rect x="420" y="120" width="28" height="28"/>
+    <rect x="448" y="120" width="28" height="28"/>
+    <rect x="476" y="120" width="28" height="28"/>
+    <rect x="504" y="120" width="28" height="28"/>
+    <rect x="420" y="148" width="28" height="28"/>
+    <rect x="448" y="148" width="28" height="28"/>
+    <rect x="476" y="148" width="28" height="28"/>
+    <rect x="504" y="148" width="28" height="28"/>
+    <rect x="420" y="176" width="28" height="28"/>
+    <rect x="448" y="176" width="28" height="28"/>
+    <rect x="476" y="176" width="28" height="28"/>
+    <rect x="504" y="176" width="28" height="28"/>
+  </g>
+  <rect x="420" y="92" width="84" height="84" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <text x="590" y="96" text-anchor="middle" font-size="12" fill="#334155">フィルタ 3×3</text>
+  <g stroke="#b45309" stroke-width="1.5" fill="#fde68a">
+    <rect x="560" y="104" width="20" height="20"/>
+    <rect x="580" y="104" width="20" height="20"/>
+    <rect x="600" y="104" width="20" height="20"/>
+    <rect x="560" y="124" width="20" height="20"/>
+    <rect x="580" y="124" width="20" height="20"/>
+    <rect x="600" y="124" width="20" height="20"/>
+    <rect x="560" y="144" width="20" height="20"/>
+    <rect x="580" y="144" width="20" height="20"/>
+    <rect x="600" y="144" width="20" height="20"/>
+  </g>
+  <text x="590" y="180" text-anchor="middle" font-size="11" fill="#92400e">重み 9個</text>
+  <text x="688" y="96" text-anchor="middle" font-size="12" fill="#334155">出力 2×2</text>
+  <g stroke="#94a3b8" stroke-width="1.5" fill="none">
+    <rect x="660" y="106" width="28" height="28" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+    <rect x="688" y="106" width="28" height="28"/>
+    <rect x="660" y="134" width="28" height="28"/>
+    <rect x="688" y="134" width="28" height="28"/>
+  </g>
+  <line x1="508" y1="134" x2="554" y2="134" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="624" y1="134" x2="654" y2="120" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="448" y="120" width="84" height="84" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="476" y="220" text-anchor="middle" font-size="11" fill="#1d4ed8">同じフィルタをずらして使い回す</text>
+  <text x="566" y="242" text-anchor="middle" font-size="12" fill="#1d4ed8">出力1つは <tspan font-weight="bold">近所（3×3）だけ</tspan> を見る（局所性）</text>
+  <text x="566" y="260" text-anchor="middle" font-size="12" fill="#1d4ed8">重みの数 = 3 × 3 = 9（重み共有：画像サイズによらない）</text>
+  <text x="566" y="282" text-anchor="middle" font-size="11.5" fill="#64748b">同じ重みをどこにも当てるので、対象が動いても同じように検出できる</text>
+  <rect x="16" y="308" width="728" height="42" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="380" y="327" text-anchor="middle" font-size="12.5" fill="#1e3a8a">全結合：重み = (W × H × Cin) × (W' × H' × Cout)　／　畳み込み：重み = K × K × Cin × Cout</text><text x="380" y="343" text-anchor="middle" font-size="11" fill="#475569">画像の大きさ W×H が掛かるか、フィルタの大きさ K×K だけで済むかの違い（図は Cin = Cout = 1 の例：3×3×1×1 = 9）</text>
+</svg>
